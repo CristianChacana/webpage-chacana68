@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Strict Content Security Policy (CSP) & Referrer Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <title>chakana.68 | Gatos Creativos — Universo de Videos IA & Historias Felinas</title>
-  <meta name="description" content="Portafolio oficial de chakana.68 (@chacana.68). Creaciones cinematográficas, musicales y épicas de gatos con creatividad multifacética." />
+  <meta name="description" content="Portafolio oficial de chakana.68 (@chakana.68). Creaciones cinematográficas, musicales y épicas de gatos con creatividad multifacética." />
   <link rel="icon" type="image/jpeg" href="src/logo/logo.jpg" />
 
   <!-- Google Fonts -->
@@ -14,51 +19,44 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Outfit', 'sans-serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              orange: '#E06324',
-              amber: '#FF9E44',
-              dark: '#090B10',
-              card: '#121620',
-              border: '#222838'
-            }
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'marquee': 'marquee 28s linear infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
-            },
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
+    :root {
+      --brand-orange: #E06324;
+      --brand-amber: #FF9E44;
+      --brand-dark: #090B10;
+    }
+
     body {
       background-color: #090B10;
       color: #F8FAFC;
       overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .text-brand-orange { color: #E06324; }
+    .text-brand-amber { color: #FF9E44; }
+    .bg-brand-orange { background-color: #E06324; }
+    .border-brand-orange { border-color: #E06324; }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 28s linear infinite;
+    }
+
+    @keyframes pulseSlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+    .animate-pulse-slow {
+      animation: pulseSlow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
 
     /* Ambient Lovable Mesh Background */
@@ -92,12 +90,6 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .text-gradient-tiktok {
-      background: linear-gradient(90deg, #00F2FE 0%, #FFFFFF 50%, #FE0979 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
@@ -114,24 +106,24 @@
       background: #E06324;
     }
 
-    /* Video card ratio & hover ring */
+    /* Video card ratio */
     .video-thumb {
       aspect-ratio: 16 / 10;
     }
   </style>
 </head>
-<body class="bg-mesh min-h-screen font-sans selection:bg-brand-orange selection:text-white">
+<body class="bg-mesh min-h-screen selection:bg-[#E06324] selection:text-white">
 
   <!-- Top Announcement / Marquee Bar -->
-  <div class="bg-gradient-to-r from-brand-orange/20 via-pink-500/20 to-amber-500/20 border-b border-white/10 py-2 overflow-hidden">
+  <div class="bg-gradient-to-r from-[#E06324]/20 via-pink-500/20 to-amber-500/20 border-b border-white/10 py-2 overflow-hidden">
     <div class="flex whitespace-nowrap animate-marquee text-xs font-medium tracking-wider uppercase text-amber-200/90">
       <span class="mx-6 flex items-center gap-2">🐾 CREATIVIDAD MULTIFACÉTICA</span>
       <span class="mx-6 flex items-center gap-2">🎬 GATOS CREATIVOS EN ACCIÓN</span>
-      <span class="mx-6 flex items-center gap-2">🔥 SÍGUENOS EN TIKTOK & YOUTUBE: @CHACANA.68</span>
+      <span class="mx-6 flex items-center gap-2">🔥 SÍGUENOS EN TIKTOK &amp; YOUTUBE: @CHAKANA.68</span>
       <span class="mx-6 flex items-center gap-2">✨ HISTORIAS ÉPICAS, MÚSICA Y HUMOR FELINO</span>
       <span class="mx-6 flex items-center gap-2">🐾 CREATIVIDAD MULTIFACÉTICA</span>
       <span class="mx-6 flex items-center gap-2">🎬 GATOS CREATIVOS EN ACCIÓN</span>
-      <span class="mx-6 flex items-center gap-2">🔥 SÍGUENOS EN TIKTOK & YOUTUBE: @CHACANA.68</span>
+      <span class="mx-6 flex items-center gap-2">🔥 SÍGUENOS EN TIKTOK &amp; YOUTUBE: @CHAKANA.68</span>
       <span class="mx-6 flex items-center gap-2">✨ HISTORIAS ÉPICAS, MÚSICA Y HUMOR FELINO</span>
     </div>
   </div>
@@ -140,23 +132,23 @@
   <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#090B10]/80 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="relative w-12 h-12 rounded-2xl overflow-hidden ring-2 ring-brand-orange/60 group-hover:ring-brand-amber transition-all shadow-lg shadow-brand-orange/20 bg-white">
+      <a href="#inicio" class="flex items-center gap-3.5 group">
+        <div class="relative w-12 h-12 rounded-2xl overflow-hidden ring-2 ring-[#E06324]/60 group-hover:ring-[#FF9E44] transition-all shadow-lg shadow-[#E06324]/20 bg-white">
           <img src="src/logo/logo.jpg" alt="chakana.68 Gatos Creativos Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
         </div>
         <div>
           <div class="flex items-center gap-2">
             <span class="font-display font-extrabold text-xl tracking-tight text-white">chakana<span class="text-brand-orange">.68</span></span>
-            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-orange/20 text-brand-amber border border-brand-orange/30">
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E06324]/20 text-brand-amber border border-[#E06324]/30">
               OFICIAL
             </span>
           </div>
-          <p class="text-xs text-slate-400 font-medium">Gatos Creativos • @chacana.68</p>
+          <p class="text-xs text-slate-400 font-medium">Gatos Creativos • @chakana.68</p>
         </div>
       </a>
 
       <!-- Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300" aria-label="Navegación principal">
         <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
         <a href="#videos" class="hover:text-white transition-colors flex items-center gap-1.5">
           <span>Videos</span>
@@ -168,21 +160,19 @@
 
       <!-- Social CTA Buttons -->
       <div class="flex items-center gap-2.5">
-        <a href="https://www.tiktok.com/@chacana.68" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.tiktok.com/@chakana.68" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/15 border border-white/15 text-white transition-all hover:scale-105 active:scale-95"
-           title="TikTok @chacana.68">
-          <!-- TikTok SVG Icon -->
-          <svg class="w-4 h-4 fill-current text-[#00F2FE]" viewBox="0 0 24 24">
+           title="TikTok @chakana.68">
+          <svg class="w-4 h-4 fill-current text-[#00F2FE]" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
           </svg>
           <span>TikTok</span>
         </a>
 
-        <a href="https://www.youtube.com/@chacana.68" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.youtube.com/@chakana.68" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-600/25 transition-all hover:scale-105 active:scale-95"
-           title="YouTube @chacana.68">
-          <!-- YouTube SVG Icon -->
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+           title="YouTube @chakana.68">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
           <span>YouTube</span>
@@ -191,325 +181,345 @@
     </div>
   </header>
 
-  <!-- HERO SECTION (Lovable Style) -->
-  <section id="inicio" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Hero Copy -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-            <span class="w-2.5 h-2.5 rounded-full bg-brand-orange animate-ping"></span>
-            <span class="text-xs sm:text-sm font-semibold text-amber-200 tracking-wide">
-              chakana.68 • Creatividad Multifacética
-            </span>
-          </div>
-
-          <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.06] tracking-tight">
-            Donde los <span class="text-gradient">Gatos Creativos</span> cobran vida épica.
-          </h1>
-
-          <p class="text-slate-300 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Bienvenido al estudio digital de <strong class="text-white font-semibold">chakana.68</strong>. Desde gatos basquetbolistas, estrellas del pop y ejecutivos hasta jinetes de dragones cinematográficos. Explora nuestras producciones originales y únete a la comunidad <span class="text-amber-400 font-semibold">@chacana.68</span>.
-          </p>
-
-          <!-- Primary CTAs -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#videos" class="inline-flex items-center gap-3 px-7 py-4 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-brand-orange via-orange-500 to-rose-500 text-white shadow-xl shadow-brand-orange/30 hover:shadow-brand-orange/50 hover:scale-[1.03] transition-all">
-              <i data-lucide="play-circle" class="w-5 h-5"></i>
-              <span>Ver Galería de Videos</span>
-            </a>
-
-            <a href="https://www.tiktok.com/@chacana.68" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl font-display font-bold text-base glass-card hover:bg-white/10 text-white">
-              <svg class="w-5 h-5 fill-current text-[#00F2FE]" viewBox="0 0 24 24">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-              </svg>
-              <span>@chacana.68</span>
-            </a>
-
-            <a href="https://www.youtube.com/@chacana.68" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl font-display font-bold text-base glass-card hover:bg-white/10 text-white">
-              <svg class="w-5 h-5 fill-current text-red-500" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-              <span>Suscribirse</span>
-            </a>
-          </div>
-
-          <!-- Quick Stats Pills -->
-          <div class="pt-6 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 border-t border-white/10">
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-white">8+</p>
-              <p class="text-xs text-slate-400">Cortos Originales</p>
-            </div>
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-brand-amber">100%</p>
-              <p class="text-xs text-slate-400">Creatividad Felina</p>
-            </div>
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-rose-400">@chacana.68</p>
-              <p class="text-xs text-slate-400">TikTok & YouTube</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Hero Bento Showcase -->
-        <div class="lg:col-span-5 relative">
-          <!-- Decorative Glow -->
-          <div class="absolute -inset-4 bg-gradient-to-tr from-brand-orange/30 via-rose-500/25 to-purple-600/30 rounded-3xl blur-2xl -z-10 animate-pulse-slow"></div>
-
-          <div class="glass-card rounded-3xl p-4 sm:p-5 space-y-4">
-            <!-- Featured Visual Banner -->
-            <div class="relative rounded-2xl overflow-hidden group aspect-[16/10] border border-white/10">
-              <img src="src/imagenes/final.jpg" alt="Gatos Creativos Multiverso chakana.68" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-orange text-white w-fit mb-1.5">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> EL ESCUADRÓN FELINO
-                </span>
-                <p class="font-display font-bold text-white text-lg leading-tight">Ejecutivo, Chef, Tejedor, Futbolista, Héroe, Basket & Biker</p>
-              </div>
-            </div>
-
-            <!-- Bottom 2-column Mini Bento -->
-            <div class="grid grid-cols-2 gap-4">
-              <div class="relative rounded-2xl overflow-hidden aspect-square border border-white/10 group cursor-pointer" onclick="openImageModal('src/imagenes/logo.png', 'CEO Michi Selfie — chakana.68')">
-                <img src="src/imagenes/logo.png" alt="Gato Ejecutivo Selfie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3">
-                  <span class="text-xs font-bold text-white flex items-center gap-1">
-                    <i data-lucide="camera" class="w-3.5 h-3.5 text-brand-amber"></i> CEO Michi Vlogs
-                  </span>
-                </div>
-              </div>
-
-              <div class="relative rounded-2xl overflow-hidden aspect-square border border-white/10 group cursor-pointer" onclick="openImageModal('src/imagenes/image_b1cc1879.png', 'Guerrero Felino & Dragón — chakana.68')">
-                <img src="src/imagenes/image_b1cc1879.png" alt="Gato Jinete de Dragón" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3">
-                  <span class="text-xs font-bold text-white flex items-center gap-1">
-                    <i data-lucide="flame" class="w-3.5 h-3.5 text-rose-400"></i> Épica Fantasía
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO CREATIONS SHOWCASE -->
-  <section id="videos" class="py-16 lg:py-24 relative border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header + Filter Pills -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div>
-          <div class="inline-flex items-center gap-2 text-brand-amber text-xs font-bold uppercase tracking-widest mb-2">
-            <i data-lucide="clapperboard" class="w-4 h-4"></i>
-            <span>Producciones Originales</span>
-          </div>
-          <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-            Mis Creaciones de <span class="text-gradient">Videos</span>
-          </h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
-            Pasa el cursor sobre cualquier tarjeta para una vista previa rápida o haz clic en <strong class="text-white">Ver con Audio / Pantalla Completa</strong> para disfrutar la experiencia completa.
-          </p>
-        </div>
-
-        <!-- Category Filter Buttons -->
-        <div class="flex flex-wrap items-center gap-2" id="video-filters">
-          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-orange text-white shadow-lg shadow-brand-orange/25 transition-all">
-            Todos (8)
-          </button>
-          <button data-filter="musical" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
-            🎵 Musicales & Pop
-          </button>
-          <button data-filter="accion" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
-            🏀 Deportes & Acción
-          </button>
-          <button data-filter="aventuras" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
-            🐾 Aventuras & VFX
-          </button>
-        </div>
-      </div>
-
-      <!-- Videos Grid (Populated via JS for clean interactivity) -->
-      <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        <!-- Rendered by script below -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- UNIVERSO VISUAL (BENTO GALLERY OF IMAGES & LOGO) -->
-  <section id="universo" class="py-16 lg:py-24 relative border-t border-white/10 bg-black/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-14">
-        <div class="inline-flex items-center gap-2 text-rose-400 text-xs font-bold uppercase tracking-widest mb-2">
-          <i data-lucide="palette" class="w-4 h-4"></i>
-          <span>Arte Conceptual & Identidad</span>
-        </div>
-        <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-          El Universo Visual de <span class="text-gradient">chakana.68</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3">
-          Cada personaje felino tiene su propia personalidad: desde la cancha y los negocios hasta mundos fantásticos. Haz clic en cualquier imagen para ampliarla.
-        </p>
-      </div>
-
-      <!-- Bento Grid for the 4 Photos -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
-        <!-- 1. Multiverso Felino (final.jpg) -->
-        <div class="md:col-span-8 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[380px]"
-             onclick="openImageModal('src/imagenes/final.jpg', 'Multiverso de Gatos Creativos — chakana.68')">
-          <img src="src/imagenes/final.jpg" alt="Multiverso de Gatos Creativos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-orange text-white inline-block mb-2">Banner Oficial</span>
-                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">7 Vidas, 7 Profesiones Épicas</h3>
-                <p class="text-slate-300 text-xs sm:text-sm mt-1">Ejecutivo, Chef Pastelero, Maestro del Tejido, crack del Fútbol, SuperGato, MVP #23 y Motoquero Rockero.</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-brand-orange transition-colors shrink-0">
-                <i data-lucide="maximize-2" class="w-5 h-5"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. CEO Cat Selfie (imagenes/logo.png) -->
-        <div class="md:col-span-4 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[380px]"
-             onclick="openImageModal('src/imagenes/logo.png', 'Michi Ejecutivo en la Ciudad — chakana.68')">
-          <img src="src/imagenes/logo.png" alt="Michi Ejecutivo Selfie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 flex flex-col justify-end">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/80 text-black w-fit mb-2">Estilo de Vida</span>
-            <h3 class="font-display font-bold text-xl text-white">El CEO de los Michis</h3>
-            <p class="text-slate-300 text-xs mt-1">Cerrando tratos millonarios de atún entre rascacielos.</p>
-          </div>
-        </div>
-
-        <!-- 3. Brand Emblem (logo/logo.jpg) -->
-        <div class="md:col-span-4 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[360px] bg-white/95 flex items-center justify-center p-6"
-             onclick="openImageModal('src/logo/logo.jpg', 'Emblema Oficial Gatos Creativos — chakana.68')">
-          <img src="src/logo/logo.jpg" alt="Logo Gatos Creativos" class="max-h-72 w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
-          <div class="absolute bottom-4 left-4 right-4 bg-[#090B10]/90 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center justify-between">
-            <div>
-              <p class="font-display font-bold text-sm text-white">Sello Gatos Creativos</p>
-              <p class="text-[11px] text-amber-400">Creatividad Multifacética</p>
-            </div>
-            <i data-lucide="award" class="w-5 h-5 text-brand-orange"></i>
-          </div>
-        </div>
-
-        <!-- 4. Dragon Rider Cat (image_b1cc1879.png) -->
-        <div class="md:col-span-8 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[360px]"
-             onclick="openImageModal('src/imagenes/image_b1cc1879.png', 'Jinete Felino del Dragón de Fuego — chakana.68')">
-          <img src="src/imagenes/image_b1cc1879.png" alt="Gato Montando Dragón sobre la Ciudad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white inline-block mb-2">Cine Épico</span>
-                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">El Conquistador de los Cielos Nocturnos</h3>
-                <p class="text-slate-300 text-xs sm:text-sm mt-1">Fantasía épica en máxima definición bajo la luna llena.</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-rose-600 transition-colors shrink-0">
-                <i data-lucide="maximize-2" class="w-5 h-5"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL MEDIA HUB (@chacana.68) -->
-  <section id="comunidad" class="py-20 lg:py-28 relative border-t border-white/10 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card rounded-[2.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden border border-brand-orange/30">
-        <!-- Decorative background glow -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/10 text-amber-300 mb-4">
-            🚀 ÚNETE A LA MANADA DIGITAL
-          </span>
-          <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-            Sigue a <span class="text-gradient">chakana.68</span> en Redes
-          </h2>
-          <p class="text-slate-300 text-base sm:text-lg mt-3">
-            No te pierdas ningún estreno. Subimos nuevos videos virales, bailes, partidos de basket felino y aventuras épicas en nuestras cuentas oficiales <strong class="text-white">@chacana.68</strong>.
-          </p>
-        </div>
-
-        <!-- Dual Platform Cards: TikTok & YouTube -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <main>
+    <!-- HERO SECTION (Lovable Style) -->
+    <section id="inicio" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- TikTok Card -->
-          <a href="https://www.tiktok.com/@chacana.68" target="_blank" rel="noopener noreferrer"
-             class="group relative rounded-3xl p-7 bg-gradient-to-br from-[#121622] to-[#0d1f26] border border-cyan-400/25 hover:border-cyan-400/70 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
-            <div class="flex items-start justify-between gap-4">
-              <div class="w-16 h-16 rounded-2xl bg-black border border-white/15 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform">
-                <svg class="w-9 h-9 fill-current text-[#00F2FE]" viewBox="0 0 24 24">
+          <!-- Left Hero Copy -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-orange animate-ping"></span>
+              <span class="text-xs sm:text-sm font-semibold text-amber-200 tracking-wide">
+                chakana.68 • Creatividad Multifacética
+              </span>
+            </div>
+
+            <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.06] tracking-tight">
+              Donde los <span class="text-gradient">Gatos Creativos</span> cobran vida épica.
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Bienvenido al estudio digital de <strong class="text-white font-semibold">chakana.68</strong>. Desde gatos basquetbolistas, estrellas del pop y ejecutivos hasta jinetes de dragones cinematográficos. Explora nuestras producciones originales y únete a la comunidad <span class="text-amber-400 font-semibold">@chakana.68</span>.
+            </p>
+
+            <!-- Primary CTAs -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#videos" class="inline-flex items-center gap-3 px-7 py-4 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-[#E06324] via-orange-500 to-rose-500 text-white shadow-xl shadow-[#E06324]/30 hover:shadow-[#E06324]/50 hover:scale-[1.03] transition-all">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+                </svg>
+                <span>Ver Galería de Videos</span>
+              </a>
+
+              <a href="https://www.tiktok.com/@chakana.68" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl font-display font-bold text-base glass-card hover:bg-white/10 text-white">
+                <svg class="w-5 h-5 fill-current text-[#00F2FE]" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                 </svg>
-              </div>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-400/15 text-cyan-300 border border-cyan-400/30 flex items-center gap-1">
-                <span>Ir a TikTok</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </span>
-            </div>
+                <span>@chakana.68</span>
+              </a>
 
-            <div class="mt-8">
-              <p class="text-xs uppercase tracking-widest text-cyan-300/80 font-bold">TikTok Oficial</p>
-              <h3 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">@chacana.68</h3>
-              <p class="text-slate-300 text-sm mt-2">
-                Clips cortos, trends musicales de michis, humor rápido y efectos visuales para compartir.
-              </p>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-cyan-300">
-              <span>tiktok.com/@chacana.68</span>
-              <span class="group-hover:translate-x-1 transition-transform">Seguir cuenta →</span>
-            </div>
-          </a>
-
-          <!-- YouTube Card -->
-          <a href="https://www.youtube.com/@chacana.68" target="_blank" rel="noopener noreferrer"
-             class="group relative rounded-3xl p-7 bg-gradient-to-br from-[#191219] to-[#290f14] border border-red-500/30 hover:border-red-500/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
-            <div class="flex items-start justify-between gap-4">
-              <div class="w-16 h-16 rounded-2xl bg-red-600 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-110 transition-transform">
-                <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 24 24">
+              <a href="https://www.youtube.com/@chakana.68" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl font-display font-bold text-base glass-card hover:bg-white/10 text-white">
+                <svg class="w-5 h-5 fill-current text-red-500" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
+                <span>Suscribirse</span>
+              </a>
+            </div>
+
+            <!-- Quick Stats Pills -->
+            <div class="pt-6 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 border-t border-white/10">
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-white">8+</p>
+                <p class="text-xs text-slate-400">Cortos Originales</p>
               </div>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/30 flex items-center gap-1">
-                <span>Ir a YouTube</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </span>
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-brand-amber">100%</p>
+                <p class="text-xs text-slate-400">Creatividad Felina</p>
+              </div>
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-rose-400">@chakana.68</p>
+                <p class="text-xs text-slate-400">TikTok &amp; YouTube</p>
+              </div>
             </div>
+          </div>
 
-            <div class="mt-8">
-              <p class="text-xs uppercase tracking-widest text-red-400 font-bold">Canal de YouTube</p>
-              <h3 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">@chacana.68</h3>
-              <p class="text-slate-300 text-sm mt-2">
-                Videos completos en alta definición, compilaciones de 1 minuto, musicales como Thriller Cat y Shorts.
-              </p>
-            </div>
+          <!-- Right Hero Bento Showcase -->
+          <div class="lg:col-span-5 relative">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-[#E06324]/30 via-rose-500/25 to-purple-600/30 rounded-3xl blur-2xl -z-10 animate-pulse-slow"></div>
 
-            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-red-300">
-              <span>youtube.com/@chacana.68</span>
-              <span class="group-hover:translate-x-1 transition-transform">Suscribirse al canal →</span>
+            <div class="glass-card rounded-3xl p-4 sm:p-5 space-y-4">
+              <!-- Featured Visual Banner -->
+              <div class="relative rounded-2xl overflow-hidden group aspect-[16/10] border border-white/10 cursor-pointer"
+                   role="button" tabindex="0"
+                   data-lightbox-src="src/imagenes/final.jpg"
+                   data-lightbox-caption="Multiverso de Gatos Creativos — chakana.68">
+                <img src="src/imagenes/final.jpg" alt="Gatos Creativos Multiverso chakana.68" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-orange text-white w-fit mb-1.5">
+                    ✨ EL ESCUADRÓN FELINO
+                  </span>
+                  <p class="font-display font-bold text-white text-lg leading-tight">Ejecutivo, Chef, Tejedor, Futbolista, Héroe, Basket &amp; Biker</p>
+                </div>
+              </div>
+
+              <!-- Bottom 2-column Mini Bento -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="relative rounded-2xl overflow-hidden aspect-square border border-white/10 group cursor-pointer"
+                     role="button" tabindex="0"
+                     data-lightbox-src="src/imagenes/logo.png"
+                     data-lightbox-caption="CEO Michi Selfie — chakana.68">
+                  <img src="src/imagenes/logo.png" alt="Gato Ejecutivo Selfie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3">
+                    <span class="text-xs font-bold text-white flex items-center gap-1">
+                      📸 CEO Michi Vlogs
+                    </span>
+                  </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden aspect-square border border-white/10 group cursor-pointer"
+                     role="button" tabindex="0"
+                     data-lightbox-src="src/imagenes/image_b1cc1879.png"
+                     data-lightbox-caption="Guerrero Felino & Dragón — chakana.68">
+                  <img src="src/imagenes/image_b1cc1879.png" alt="Gato Jinete de Dragón" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3">
+                    <span class="text-xs font-bold text-white flex items-center gap-1">
+                      🔥 Épica Fantasía
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
 
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- VIDEO CREATIONS SHOWCASE -->
+    <section id="videos" class="py-16 lg:py-24 relative border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header + Filter Pills -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div class="inline-flex items-center gap-2 text-brand-amber text-xs font-bold uppercase tracking-widest mb-2">
+              <span>🎬 Producciones Originales</span>
+            </div>
+            <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
+              Mis Creaciones de <span class="text-gradient">Videos</span>
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+              Pasa el cursor sobre cualquier tarjeta para una vista previa rápida o haz clic en <strong class="text-white">Ver con Audio en Cine</strong> para disfrutar la experiencia completa.
+            </p>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2" id="video-filters" role="group" aria-label="Filtrar videos por categoría">
+            <button type="button" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-orange text-white shadow-lg shadow-[#E06324]/25 transition-all">
+              Todos (8)
+            </button>
+            <button type="button" data-filter="musical" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
+              🎵 Musicales &amp; Pop
+            </button>
+            <button type="button" data-filter="accion" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
+              🏀 Deportes &amp; Acción
+            </button>
+            <button type="button" data-filter="aventuras" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
+              🐾 Aventuras &amp; VFX
+            </button>
+          </div>
+        </div>
+
+        <!-- Videos Grid (Populated safely via src/js/app.js) -->
+        <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+
+      </div>
+    </section>
+
+    <!-- UNIVERSO VISUAL (BENTO GALLERY OF IMAGES & LOGO) -->
+    <section id="universo" class="py-16 lg:py-24 relative border-t border-white/10 bg-black/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 text-rose-400 text-xs font-bold uppercase tracking-widest mb-2">
+            <span>🎨 Arte Conceptual &amp; Identidad</span>
+          </div>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
+            El Universo Visual de <span class="text-gradient">chakana.68</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-3">
+            Cada personaje felino tiene su propia personalidad: desde la cancha y los negocios hasta mundos fantásticos. Haz clic en cualquier imagen para ampliarla.
+          </p>
+        </div>
+
+        <!-- Bento Grid for the 4 Photos -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          <!-- 1. Multiverso Felino (final.jpg) -->
+          <div class="md:col-span-8 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[380px]"
+               role="button" tabindex="0"
+               data-lightbox-src="src/imagenes/final.jpg"
+               data-lightbox-caption="Multiverso de Gatos Creativos — chakana.68">
+            <img src="src/imagenes/final.jpg" alt="Multiverso de Gatos Creativos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-orange text-white inline-block mb-2">Banner Oficial</span>
+                  <h3 class="font-display font-bold text-xl sm:text-2xl text-white">7 Vidas, 7 Profesiones Épicas</h3>
+                  <p class="text-slate-300 text-xs sm:text-sm mt-1">Ejecutivo, Chef Pastelero, Maestro del Tejido, crack del Fútbol, SuperGato, MVP #23 y Motoquero Rockero.</p>
+                </div>
+                <div class="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-brand-orange transition-colors shrink-0">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. CEO Cat Selfie (imagenes/logo.png) -->
+          <div class="md:col-span-4 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[380px]"
+               role="button" tabindex="0"
+               data-lightbox-src="src/imagenes/logo.png"
+               data-lightbox-caption="Michi Ejecutivo en la Ciudad — chakana.68">
+            <img src="src/imagenes/logo.png" alt="Michi Ejecutivo Selfie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 flex flex-col justify-end">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/80 text-black w-fit mb-2">Estilo de Vida</span>
+              <h3 class="font-display font-bold text-xl text-white">El CEO de los Michis</h3>
+              <p class="text-slate-300 text-xs mt-1">Cerrando tratos millonarios de atún entre rascacielos.</p>
+            </div>
+          </div>
+
+          <!-- 3. Brand Emblem (logo/logo.jpg) -->
+          <div class="md:col-span-4 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[360px] bg-white/95 flex items-center justify-center p-6"
+               role="button" tabindex="0"
+               data-lightbox-src="src/logo/logo.jpg"
+               data-lightbox-caption="Emblema Oficial Gatos Creativos — chakana.68">
+            <img src="src/logo/logo.jpg" alt="Logo Gatos Creativos" class="max-h-72 w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute bottom-4 left-4 right-4 bg-[#090B10]/90 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center justify-between">
+              <div>
+                <p class="font-display font-bold text-sm text-white">Sello Gatos Creativos</p>
+                <p class="text-[11px] text-amber-400">Creatividad Multifacética</p>
+              </div>
+              <span class="text-brand-orange text-lg" aria-hidden="true">🏅</span>
+            </div>
+          </div>
+
+          <!-- 4. Dragon Rider Cat (image_b1cc1879.png) -->
+          <div class="md:col-span-8 glass-card rounded-3xl overflow-hidden group cursor-pointer relative min-h-[300px] sm:min-h-[360px]"
+               role="button" tabindex="0"
+               data-lightbox-src="src/imagenes/image_b1cc1879.png"
+               data-lightbox-caption="Jinete Felino del Dragón de Fuego — chakana.68">
+            <img src="src/imagenes/image_b1cc1879.png" alt="Gato Montando Dragón sobre la Ciudad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white inline-block mb-2">Cine Épico</span>
+                  <h3 class="font-display font-bold text-xl sm:text-2xl text-white">El Conquistador de los Cielos Nocturnos</h3>
+                  <p class="text-slate-300 text-xs sm:text-sm mt-1">Fantasía épica en máxima definición bajo la luna llena.</p>
+                </div>
+                <div class="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-rose-600 transition-colors shrink-0">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA HUB (@chakana.68) -->
+    <section id="comunidad" class="py-20 lg:py-28 relative border-t border-white/10 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-[2.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden border border-[#E06324]/30">
+          <!-- Decorative background glow -->
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#E06324]/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/10 text-amber-300 mb-4">
+              🚀 ÚNETE A LA MANADA DIGITAL
+            </span>
+            <h2 class="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
+              Sigue a <span class="text-gradient">chakana.68</span> en Redes
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg mt-3">
+              No te pierdas ningún estreno. Subimos nuevos videos virales, bailes, partidos de basket felino y aventuras épicas en nuestras cuentas oficiales <strong class="text-white">@chakana.68</strong>.
+            </p>
+          </div>
+
+          <!-- Dual Platform Cards: TikTok & YouTube -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- TikTok Card -->
+            <a href="https://www.tiktok.com/@chakana.68" target="_blank" rel="noopener noreferrer"
+               class="group relative rounded-3xl p-7 bg-gradient-to-br from-[#121622] to-[#0d1f26] border border-cyan-400/25 hover:border-cyan-400/70 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-black border border-white/15 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform">
+                  <svg class="w-9 h-9 fill-current text-[#00F2FE]" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-400/15 text-cyan-300 border border-cyan-400/30 flex items-center gap-1">
+                  <span>Ir a TikTok</span>
+                  <span aria-hidden="true">↗</span>
+                </span>
+              </div>
+
+              <div class="mt-8">
+                <p class="text-xs uppercase tracking-widest text-cyan-300/80 font-bold">TikTok Oficial</p>
+                <h3 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">@chakana.68</h3>
+                <p class="text-slate-300 text-sm mt-2">
+                  Clips cortos, trends musicales de michis, humor rápido y efectos visuales para compartir.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-cyan-300">
+                <span>tiktok.com/@chakana.68</span>
+                <span class="group-hover:translate-x-1 transition-transform">Seguir cuenta →</span>
+              </div>
+            </a>
+
+            <!-- YouTube Card -->
+            <a href="https://www.youtube.com/@chakana.68" target="_blank" rel="noopener noreferrer"
+               class="group relative rounded-3xl p-7 bg-gradient-to-br from-[#191219] to-[#290f14] border border-red-500/30 hover:border-red-500/80 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-red-600 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-110 transition-transform">
+                  <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/30 flex items-center gap-1">
+                  <span>Ir a YouTube</span>
+                  <span aria-hidden="true">↗</span>
+                </span>
+              </div>
+
+              <div class="mt-8">
+                <p class="text-xs uppercase tracking-widest text-red-400 font-bold">Canal de YouTube</p>
+                <h3 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">@chakana.68</h3>
+                <p class="text-slate-300 text-sm mt-2">
+                  Videos completos en alta definición, compilaciones de 1 minuto, musicales como Thriller Cat y Shorts.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-red-300">
+                <span>youtube.com/@chakana.68</span>
+                <span class="group-hover:translate-x-1 transition-transform">Suscribirse al canal →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 py-12 bg-[#06070B]">
@@ -523,8 +533,8 @@
       </div>
 
       <div class="flex items-center gap-6 text-sm text-slate-400">
-        <a href="https://www.tiktok.com/@chacana.68" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">TikTok (@chacana.68)</a>
-        <a href="https://www.youtube.com/@chacana.68" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">YouTube (@chacana.68)</a>
+        <a href="https://www.tiktok.com/@chakana.68" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">TikTok (@chakana.68)</a>
+        <a href="https://www.youtube.com/@chakana.68" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">YouTube (@chakana.68)</a>
       </div>
 
       <p class="text-xs text-slate-500">
@@ -534,7 +544,7 @@
   </footer>
 
   <!-- CINEMA VIDEO MODAL -->
-  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl" role="dialog" aria-modal="true" aria-labelledby="modal-video-title">
     <div class="relative w-full max-w-4xl glass-card rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
       <!-- Modal Top Bar -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#090B10]/90">
@@ -542,25 +552,27 @@
           <span id="modal-video-badge" class="text-[11px] font-bold uppercase tracking-wider text-brand-amber"></span>
           <h3 id="modal-video-title" class="font-display font-bold text-lg sm:text-xl text-white"></h3>
         </div>
-        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-white/10 hover:bg-red-500/80 text-white transition-colors" title="Cerrar (Esc)">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button type="button" id="close-video-modal-btn" class="p-2 rounded-xl bg-white/10 hover:bg-red-500/80 text-white transition-colors" title="Cerrar (Esc)" aria-label="Cerrar reproductor">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
         </button>
       </div>
 
       <!-- Video Player Container -->
       <div class="bg-black aspect-video w-full flex items-center justify-center">
-        <video id="modal-video-player" class="w-full h-full max-h-[75vh] object-contain" controls playsinline></video>
+        <video id="modal-video-player" class="w-full h-full max-h-[75vh] object-contain" controls playsinline controlsList="nodownload"></video>
       </div>
 
       <!-- Modal Footer with Social Links -->
       <div class="px-6 py-4 bg-[#090B10]/90 flex flex-wrap items-center justify-between gap-4">
         <p id="modal-video-desc" class="text-xs sm:text-sm text-slate-300"></p>
         <div class="flex items-center gap-2">
-          <a href="https://www.tiktok.com/@chacana.68" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white flex items-center gap-1.5">
+          <a href="https://www.tiktok.com/@chakana.68" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white flex items-center gap-1.5">
             <span>Ver más en TikTok</span>
           </a>
-          <a href="https://www.youtube.com/@chacana.68" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white flex items-center gap-1.5">
-            <span>YouTube @chacana.68</span>
+          <a href="https://www.youtube.com/@chakana.68" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white flex items-center gap-1.5">
+            <span>YouTube @chakana.68</span>
           </a>
         </div>
       </div>
@@ -568,249 +580,19 @@
   </div>
 
   <!-- IMAGE LIGHTBOX MODAL -->
-  <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onclick="closeImageModal()">
-    <div class="relative max-w-5xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeImageModal()" class="self-end mb-3 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors">
-        <i data-lucide="x" class="w-6 h-6"></i>
+  <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-xl" role="dialog" aria-modal="true" aria-labelledby="modal-image-caption">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button type="button" id="close-image-modal-btn" class="self-end mb-3 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors" title="Cerrar (Esc)" aria-label="Cerrar imagen">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
       </button>
       <img id="modal-image-el" src="" alt="" class="max-h-[80vh] w-auto rounded-2xl border border-white/15 shadow-2xl object-contain" />
       <p id="modal-image-caption" class="mt-4 font-display font-bold text-white text-base sm:text-lg"></p>
     </div>
   </div>
 
-  <!-- APPLICATION SCRIPT -->
-  <script>
-    // Video catalog referencing exact files in src/videos/
-    const videosData = [
-      {
-        id: 'timmy-basket',
-        title: 'Timmy Basketball: Gran Final',
-        category: 'accion',
-        badge: '🏀 Deportes & Acción',
-        description: 'Timmy demuestra quién manda en la duela con clavadas y jugadas de campeonato dignas de un MVP.',
-        file: 'src/videos/timmy basketball final final.mp4',
-        featured: true
-      },
-      {
-        id: 'mj-thriller',
-        title: 'MJ Thriller Cat — Musical Nocturno',
-        category: 'musical',
-        badge: '🎵 Musical & Pop',
-        description: 'Homenaje felino al clásico Thriller con pasos legendarios, chamarra icónica y ritmo sobrenatural.',
-        file: 'src/videos/mj triller cat.mp4',
-        featured: true
-      },
-      {
-        id: 'we-control-meow',
-        title: 'We Control The Meow',
-        category: 'musical',
-        badge: '🎧 Electro & Actitud',
-        description: 'Los michis toman el control absoluto del sonido y la ciudad con un beat imparable.',
-        file: 'src/videos/we control the meow.mp4',
-        featured: false
-      },
-      {
-        id: 'miaumiau-1min',
-        title: 'Miau Miau — Especial 1 Minuto',
-        category: 'musical',
-        badge: '🎤 Hit Viral (1 Min)',
-        description: 'Un minuto completo de pura energía musical gatuna que no podrás dejar de cantar.',
-        file: 'src/videos/miaumiau 1 min.mp4',
-        featured: false
-      },
-      {
-        id: 'timmy-bambi',
-        title: 'Timmy y Bambi: Dúo Dinámico',
-        category: 'aventuras',
-        badge: '🐾 Historia & Amistad',
-        description: 'El encuentro más tierno y épico entre Timmy y Bambi en una aventura inolvidable.',
-        file: 'src/videos/timmy y bambi 1.mp4',
-        featured: false
-      },
-      {
-        id: 'i2v-cinema',
-        title: 'Secuencia Cinemática I2V',
-        category: 'aventuras',
-        badge: '✨ Animación IA',
-        description: '10 segundos de puro realismo e impacto visual dando vida al universo de chakana.68.',
-        file: 'src/videos/I2V 10-second video. No _11-10_11_47_21.mp4',
-        featured: false
-      },
-      {
-        id: 'workflow-vfx',
-        title: 'Transformación & VFX Felino',
-        category: 'aventuras',
-        badge: '🔥 Magia Visual',
-        description: 'Cambio de escena y efectos especiales de última generación protagonizados por nuestros gatos.',
-        file: 'src/videos/Workflow Replace the current _11-11_10_11_48.mp4',
-        featured: false
-      },
-      {
-        id: 'short-viral',
-        title: 'Clip Express: ¡Haz que suceda!',
-        category: 'accion',
-        badge: '⚡ Short Viral',
-        description: 'Dosis rápida de carisma gatuno ideal para TikTok y YouTube Shorts.',
-        file: 'src/videos/sin-t-tulo-haz-que-d (1).mp4',
-        featured: false
-      }
-    ];
-
-    const gridEl = document.getElementById('videos-grid');
-
-    function renderVideos(filter = 'all') {
-      const filtered = filter === 'all'
-        ? videosData
-        : videosData.filter(v => v.category === filter);
-
-      gridEl.innerHTML = filtered.map((video, idx) => {
-        const encodedSrc = encodeURI(video.file);
-        return `
-          <article class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group"
-                   onmouseenter="previewPlay(this)"
-                   onmouseleave="previewPause(this)">
-            <div>
-              <!-- Video Container -->
-              <div class="relative video-thumb bg-black overflow-hidden cursor-pointer"
-                   onclick="openVideoModal('${video.id}')">
-                <video
-                  src="${encodedSrc}#t=0.5"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  muted
-                  loop
-                  playsinline
-                  preload="metadata"
-                ></video>
-
-                <!-- Dark Gradient Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none"></div>
-
-                <!-- Top Category Badge -->
-                <div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                  <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-black/65 backdrop-blur-md text-amber-300 border border-white/15">
-                    ${video.badge}
-                  </span>
-                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-brand-orange/90 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    Vista Previa
-                  </span>
-                </div>
-
-                <!-- Center Play Button -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div class="w-14 h-14 rounded-full bg-brand-orange/90 text-white flex items-center justify-center shadow-xl shadow-brand-orange/40 group-hover:scale-110 transition-transform">
-                    <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card Text -->
-              <div class="p-6 pb-4">
-                <h3 class="font-display font-bold text-xl text-white group-hover:text-brand-amber transition-colors">
-                  ${video.title}
-                </h3>
-                <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                  ${video.description}
-                </p>
-              </div>
-            </div>
-
-            <!-- Card Footer Action -->
-            <div class="px-6 pb-6 pt-2 flex items-center justify-between gap-3">
-              <button onclick="openVideoModal('${video.id}')"
-                      class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-white/8 hover:bg-brand-orange text-white border border-white/10 hover:border-brand-orange transition-all flex items-center justify-center gap-2">
-                <i data-lucide="volume-2" class="w-4 h-4"></i>
-                <span>Ver con Audio en Cine</span>
-              </button>
-            </div>
-          </article>
-        `;
-      }).join('');
-
-      lucide.createIcons();
-    }
-
-    // Hover preview helper
-    function previewPlay(cardEl) {
-      const vid = cardEl.querySelector('video');
-      if (vid) {
-        vid.play().catch(() => {});
-      }
-    }
-
-    function previewPause(cardEl) {
-      const vid = cardEl.querySelector('video');
-      if (vid) {
-        vid.pause();
-      }
-    }
-
-    // Filter Buttons Logic
-    document.querySelectorAll('#video-filters .filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('#video-filters .filter-btn').forEach(b => {
-          b.className = 'filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all';
-        });
-        btn.className = 'filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-orange text-white shadow-lg shadow-brand-orange/25 transition-all';
-        renderVideos(btn.dataset.filter);
-      });
-    });
-
-    // Cinema Video Modal Logic
-    const videoModal = document.getElementById('video-modal');
-    const modalPlayer = document.getElementById('modal-video-player');
-    const modalTitle = document.getElementById('modal-video-title');
-    const modalBadge = document.getElementById('modal-video-badge');
-    const modalDesc = document.getElementById('modal-video-desc');
-
-    function openVideoModal(videoId) {
-      const item = videosData.find(v => v.id === videoId);
-      if (!item) return;
-
-      modalTitle.textContent = item.title;
-      modalBadge.textContent = item.badge;
-      modalDesc.textContent = item.description;
-      modalPlayer.src = encodeURI(item.file);
-      videoModal.classList.remove('hidden');
-      videoModal.classList.add('flex');
-      modalPlayer.play().catch(() => {});
-    }
-
-    function closeVideoModal() {
-      modalPlayer.pause();
-      modalPlayer.removeAttribute('src');
-      modalPlayer.load();
-      videoModal.classList.add('hidden');
-      videoModal.classList.remove('flex');
-    }
-
-    // Image Lightbox Modal Logic
-    const imageModal = document.getElementById('image-modal');
-    const modalImageEl = document.getElementById('modal-image-el');
-    const modalImageCaption = document.getElementById('modal-image-caption');
-
-    function openImageModal(src, caption) {
-      modalImageEl.src = encodeURI(src);
-      modalImageCaption.textContent = caption;
-      imageModal.classList.remove('hidden');
-      imageModal.classList.add('flex');
-    }
-
-    function closeImageModal() {
-      imageModal.classList.add('hidden');
-      imageModal.classList.remove('flex');
-    }
-
-    // Close modals with Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeVideoModal();
-        closeImageModal();
-      }
-    });
-
-    // Initial render
-    renderVideos('all');
-    lucide.createIcons();
-  </script>
+  <!-- External Security-Hardened Application Script -->
+  <script src="src/js/app.js" defer></script>
 </body>
 </html>
